@@ -9,14 +9,11 @@ export class GifsSearchBoxComponent {
 
   @ViewChild('txtBuscar') txtBuscar!: ElementRef<HTMLInputElement>;
 
-  constructor( private gifsService: GifsService ) {
+  constructor(private gifsService: GifsService) { }
 
-  }
-  buscar() {
+  public buscar() {
     const valor = this.txtBuscar.nativeElement.value;
-
     this.gifsService.searchTag( valor );
-
     this.txtBuscar.nativeElement.value = '';
   }
 }
